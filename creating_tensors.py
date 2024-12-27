@@ -1,21 +1,24 @@
 import torch
+import numpy as np
 
+# Initializing Tensors
 
-# Creating Tensors
+# 1. Directly from Data
+data = [[1, 2], [3, 5]]
+x_data = torch.tensor(data)
 
-data = torch.empty(2, 3)
+print(f"CREATING FROM RAW DATA \n tensor data: \n {x_data}\n")
+print(f"List: \n {data} \n")
 
-data_y = torch.rand(2, 2)
+# 2. From numpy Array
+np_array = np.array(data)
+xp_np = torch.tensor(np_array)
+print(f"CREATING FROM NUMPY ARRAYS \n numpy array: \n {np_array}\n")
+print(f"xp_np: \n {xp_np} \n")
 
-data_z = torch.zeros(2,2)
+# 3. Creating from another tensor
+x_ones = torch.ones_like(x_data) # retains the properties of x_data
+print(f"CREATING FROM OTHER TENSORS \n Ones Tensor: \n {x_ones} \n")
 
-data_ones = torch.ones(3,3)
-print(data_ones)
-
-data_datatype = torch.ones(2,2, dtype=torch.double)
-print(data_datatype)
-print(data_datatype.size())
-
-data_list = torch.tensor([[2.5,0.1],[3.3,5.5]])
-print(data_list)
-
+x_rand = torch.rand_like(x_data, dtype=torch.float) # overrides the datatype of x_data
+print(f"Random Tensor: \n {x_rand} \n")
