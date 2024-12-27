@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 
-# Basic Operations
+#Basic Operations
 
 x = torch.rand(2,2)
 y = torch.rand(2,2)
@@ -78,3 +78,13 @@ t = torch.from_numpy(n)
 np.add(n, 1, out=n)
 print(f"t: {t}")
 print(f"n: {n}")
+
+# Reshaping a Tensor
+reshapingTensor = torch.rand(4,4)
+print(reshapingTensor.shape)
+reshapedTensor = reshapingTensor.view(-1, 8)
+print(reshapedTensor.shape)
+
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+    x = torch.ones(5, device=device)
