@@ -49,5 +49,32 @@ y = torch.rand(2,2)
 #Slicing Operations
 data = torch.rand(5, 3)
 print(f"All Data\n{data}")
+print(f"First Row: {data[0]}")
+print(f"First column: {data[:, 0]}")
+print(f"Last column: {data[..., -1]}")
+print(f"Last Row: {data[-1:]}")
 print(f"All rows for column 0 \n{data[:, 0]}")
 print(f"Row number One but all columns \n{data[1, 1]}")
+
+#In-place Operations: Operations that store the result into the operand are called in-place. eg (x_copy(y))
+
+
+# BRIDGE WITH Numpy
+# Tensor to Numpy array
+t = torch.ones(5)
+print(f"t: {t}")
+n = t.numpy()
+print(f"n: {n}")
+
+# A change in the tensor reflects in the numpy array.
+t.add_(1)
+print(f"t: {t}")
+print(f"n: {n}")
+
+# Numpy Array to Tensor
+n = np.ones(5)
+t = torch.from_numpy(n)
+
+np.add(n, 1, out=n)
+print(f"t: {t}")
+print(f"n: {n}")
