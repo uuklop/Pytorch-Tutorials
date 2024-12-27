@@ -25,3 +25,21 @@ subtraction = torch.subtract(x,y)
 print(f"Torch method subtraction = {subtraction}")
 x.sub_(y)
 print(f"In-place subtraction {x}")
+
+#Multiplication
+multiplicationOne = x * y
+print(f"\n\nMULTIPLICATION\nFirst multiplication = {multiplicationOne}")
+# or
+multiplication = torch.mul(x,y)
+print(f"Torch method Multiplication = {multiplication}")
+x.mul_(y)
+print(f"In-place multiplication {x}")
+
+#Division
+divisionOne= x / y
+print(f"\n\nDIVISION\nFirst division = {divisionOne}")
+# or
+division = torch.div(x,y)
+print(f"Torch method Division = {division}")
+x.div_(y)
+print(f"In-place Division {x}")
