@@ -33,3 +33,10 @@ zeros_tensor = torch.zeros(shape)
 print(f"CREATING FROM RANDOM OR CONSTANT VALUES Random Tensor \n {rand_tensor}\n")
 print(f"Ones Tensor: \n {ones_tensor} \n")
 print(f"Zeros Tensor: \n {zeros_tensor} \n")
+
+# Attributes of a Tensor
+# Shape, datatype, and the device on which they are stored
+tensor = torch.randn(3, 4)
+print(f"ATTRIBUTES OF TENSOR \nShape of Tensor {tensor.shape}")
+print(f"Datatype of Tensor {tensor.dtype}")
+print(f"Device tensor is stored on {tensor.device}")
