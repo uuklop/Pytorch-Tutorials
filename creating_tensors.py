@@ -22,3 +22,14 @@ print(f"CREATING FROM OTHER TENSORS \n Ones Tensor: \n {x_ones} \n")
 
 x_rand = torch.rand_like(x_data, dtype=torch.float) # overrides the datatype of x_data
 print(f"Random Tensor: \n {x_rand} \n")
+
+# 4. With random or constant values:
+# Shape is a tuple of tensor dimensions. in the function below, it determines the dimensionality of the output tensor.
+shape = (2, 3)
+rand_tensor = torch.rand(shape)
+ones_tensor = torch.ones(shape)
+zeros_tensor = torch.zeros(shape)
+
+print(f"CREATING FROM RANDOM OR CONSTANT VALUES Random Tensor \n {rand_tensor}\n")
+print(f"Ones Tensor: \n {ones_tensor} \n")
+print(f"Zeros Tensor: \n {zeros_tensor} \n")
