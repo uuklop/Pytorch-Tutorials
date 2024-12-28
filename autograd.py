@@ -53,3 +53,9 @@ for epoch in range (2):
 
     # Before the next optimization, Empty the gradient
     weights.grad.zero_()
+
+
+# Using Pytorch Built in optimizer
+optimizer = torch.optim.SGD(weights, lr=0.01)
+optimizer.step()
+optimizer.zero_grad()
