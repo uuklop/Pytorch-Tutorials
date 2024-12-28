@@ -1,4 +1,5 @@
 import torch
+from triton.language import dtype
 
 # Gradients are important for model optimization
 
@@ -8,7 +9,7 @@ print(x)
 y = x + 2
 print(y)
 
-z = y*y*y
+z = y*y*2
 print(z)
 
 meanSample = z.mean()
@@ -17,3 +18,12 @@ print(meanSample)
 # Calculating the gradient
 meanSample.backward() #dz/dx
 print(x.grad)
+
+#backward function can only be created for scalar outputs
+
+tryTwo = y*y*2
+print(tryTwo)
+
+#Fixing it
+fixing_it = torch.tensor([0.1,1.0,0.001], dtype=torch.float32)
+tryTwo.backward(fixing_it)
