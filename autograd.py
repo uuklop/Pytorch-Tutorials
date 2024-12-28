@@ -7,3 +7,13 @@ print(x)
 
 y = x + 2
 print(y)
+
+z = y*y*y
+print(z)
+
+meanSample = z.mean()
+print(meanSample)
+
+# Calculating the gradient
+meanSample.backward() #dz/dx
+print(x.grad)
