@@ -40,3 +40,16 @@ print(y)
 with torch.no_grad():
     y = x + 2
     print(y)
+
+# Whenever the backward function is called, the gradient for the tensor will be accumulated into .grad attribute
+weights = torch.ones(4, requires_grad=True)
+
+for epoch in range (2):
+    model_output = (weights*3).sum()
+
+    model_output.backward()
+
+    print(weights.grad)
+
+    # Before the next optimization, Empty the gradient
+    weights.grad.zero_()
